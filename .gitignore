@@ -1,0 +1,42 @@
+from pathlib import Path
+
+html = """<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloud Phone FREE</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#07111f;color:#fff}
+header{padding:48px 20px;text-align:center;background:linear-gradient(135deg,#0b5cff,#6d28d9)}
+h1{margin:0 0 10px;font-size:42px}header p{margin:0;color:#e8edff}
+main{max-width:1000px;margin:auto;padding:30px 20px}.badge{display:inline-block;padding:8px 14px;border-radius:999px;background:#12345c;color:#8ec5ff;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#101d30;border:1px solid #243753;border-radius:18px;padding:24px;box-shadow:0 10px 30px #0004}
+.card h2{margin-top:0}.price{font-size:32px;font-weight:700;color:#55e6a5;margin:16px 0}
+ul{padding-left:20px;line-height:1.8;color:#cbd5e1}
+button{width:100%;padding:13px;border:0;border-radius:10px;background:#2563eb;color:white;font-size:16px;font-weight:700;cursor:pointer}
+button:hover{background:#1d4ed8}.status{color:#55e6a5;font-size:14px;margin-bottom:8px}
+footer{text-align:center;padding:30px;color:#94a3b8}
+</style>
+</head>
+<body>
+<header><h1>☁️ Cloud Phone</h1><p>Cloud Phone miễn phí — dùng ngay trên nền tảng đám mây</p></header>
+<main>
+<div class="badge">● Tất cả máy đang FREE</div>
+<div class="grid">
+<section class="card"><div class="status">● Online</div><h2>CP-4 Basic</h2><div class="price">FREE · 0đ</div><ul><li>4 GB RAM</li><li>4 CPU</li><li>Máy ảo Cloud Phone</li></ul><button onclick="usePhone('CP-4 Basic')">Dùng ngay</button></section>
+<section class="card"><div class="status">● Online</div><h2>CP-8 Pro</h2><div class="price">FREE · 0đ</div><ul><li>8 GB RAM</li><li>8 CPU</li><li>Ưu tiên tài nguyên</li></ul><button onclick="usePhone('CP-8 Pro')">Dùng ngay</button></section>
+<section class="card"><div class="status">● Online</div><h2>CP-16 Max</h2><div class="price">FREE · 0đ</div><ul><li>16 GB RAM</li><li>16 CPU</li><li>Hiệu năng cao</li></ul><button onclick="usePhone('CP-16 Max')">Dùng ngay</button></section>
+</div>
+</main>
+<footer>Cloud Phone FREE © 2026</footer>
+<script>
+function usePhone(name){alert(name+" đã được chọn. Đây là bản demo Cloud Phone FREE.");}
+</script>
+</body>
+</html>"""
+p=Path("/mnt/data/cloud-phone.html")
+p.write_text(html, encoding="utf-8")
+print(p, p.stat().st_size)
+
